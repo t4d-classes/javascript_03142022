@@ -1,0 +1,56 @@
+<script>
+
+  'use strict';
+
+  const delay = () => Math.floor(Math.random() * 1000) + 500;
+
+  /*
+  class Promise {
+  
+    constructor(asyncFn) {
+
+      this._resolveFns = [];
+      this._rejectFns = [];
+    
+      const resolveFn = result => {
+        this._resolveFns.forEach(fn => fn(result));
+      };
+
+      const rejectFn = result => {
+        this._rejectFns.forEach(fn => fn(result));
+      };
+
+      asyncFn(resolveFn, rejectFn);
+    }
+
+    then(fn) {
+      this._resolveFns.push(fn);
+    }
+
+    catch(fn) {
+      this._rejectFns.push(fn);
+    }
+  }
+  */
+
+
+  /*
+  const p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject('a');
+    }, delay());
+  });
+
+  p
+    .then(result => {
+      console.log(result);
+    })
+    .catch(err => {
+      console.log('err: ', err);
+    });  
+
+  console.log('made it here');
+  */
+
+
+</script>

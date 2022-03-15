@@ -1,0 +1,82 @@
+<script>
+
+  'use strict';
+
+  /*
+  setTimeout(() => {
+  
+    console.log("hello");
+
+  }, 0);
+
+  console.log("made it here");
+  */
+
+  const delay = () => Math.floor(Math.random() * 1000) + 500;
+
+  // console.log(delay());
+
+  /*
+  setTimeout(() => {
+    console.log('a');
+
+    setTimeout(() => {
+      console.log('b');
+
+      setTimeout(() => {
+        console.log('c');
+      }, delay());
+
+    }, delay());
+
+  }, delay());
+  */
+
+  function allDone() {
+    console.log("all done");
+  }
+
+  let counter = 0;
+
+  counter++;
+  setTimeout(() => {
+    console.log('a');
+
+    counter--;
+    if (counter === 0) {
+      allDone();
+    }
+  }, delay());
+
+  counter++;
+  setTimeout(() => {
+    console.log('b');
+
+    counter--;
+    if (counter === 0) {
+      allDone();
+    }
+  }, delay());
+
+  counter++;
+  setTimeout(() => {
+    console.log('c');
+
+    counter--;
+    if (counter === 0) {
+      allDone();
+    }
+  }, delay());
+
+  // Lab Exercise:
+
+  // Run the allDone function after all three setTimeouts have been invoked
+  // Rules:
+  // - Do not hard code the delay values
+  // - All three setTimeout calls must be in the same task
+  // - You cannot use promises
+
+
+
+
+</script>
