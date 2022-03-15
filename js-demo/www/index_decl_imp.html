@@ -1,0 +1,46 @@
+<script>
+
+  // imperative - describes the what and how
+  // declarative - describes the what
+
+  const nums = [1,2,3,4,5];
+
+  // option 1 - not good
+
+  const doubleNums = [];
+
+  for (let x=0; x<nums.length; x++) {
+    doubleNums.push(nums[x] * 2);
+  }
+
+  console.log(nums);
+  console.log(doubleNums);
+
+  // option 2 - good
+
+  const d = 2;
+
+  const doubleNums2 = nums.map(n => n * d);
+  console.log(doubleNums2);
+
+  // option 3 - not good
+
+  const doubleNums3 = []
+  nums.forEach(n => doubleNums3.push(n * 2));
+  console.log(doubleNums3);
+
+  // common mistake
+
+  // bad code
+  nums.map(n => {
+    console.log(n * 2);
+  });
+
+
+  // good code
+  nums.forEach(n => {
+    console.log(n * 2);
+  });
+
+
+</script>

@@ -1,0 +1,77 @@
+<script>
+
+  // a parameterized, repeatable block of code, all syntaxes are functionally the same
+
+  // keyword-style functions: use call-site 'this'
+  // arrow functions: use lexical 'this'
+
+  // function declaration
+  // keyword-style
+  function doIt() {
+
+    console.log('do it');
+
+  }
+
+  // doIt(); // invoke (call) the function
+
+  // function expression
+  // keyword-style
+  const doIt2 = function() {
+  
+    console.log('do it 2');
+  };
+
+  // doIt2(); // invoke the function
+
+  // arrow function
+  const doIt3 = () => {
+  
+    console.log('do it 3');
+  };
+
+  // doIt3(); // invoke the function
+
+  // generator function
+  function* doIt4() {
+    let sum = 0;
+    console.log('in doit4 func sum:', sum);
+    sum += yield 1;
+    console.log('in doit4 func sum:', sum);
+    sum += yield 2;
+    console.log('in doit4 func sum:', sum);
+    sum += yield 3;
+    console.log('in doit4 func sum:', sum);
+    return sum;
+  }
+
+  let res = 0;
+
+  const gen = doIt4();
+
+  console.log(gen)
+  console.log('call next');
+  res = gen.next(0);
+
+  console.log('call next');
+  res = gen.next(res.value);
+
+  console.log('call next');
+  res = gen.next(res.value);
+
+  console.log('call next');
+  console.log(gen.next(res.value));
+
+
+
+  /*
+  for (let x of doIt4()) {
+  
+    console.log('in loop');
+    console.log(x);
+  }
+  */
+
+
+
+</script>

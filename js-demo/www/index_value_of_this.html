@@ -1,0 +1,43 @@
+<script>
+
+  'use strict';
+
+  // call-site "this"
+  // value of this is determined by the call-site
+  // how the function is called
+  function doIt() {
+  
+    console.log(this); // o
+
+    // arrow functions use lexical this, the value of this from the surrounding lexical scope
+    // where the function is declared
+    const inner = () => {
+      console.log(this);
+    };
+
+    /*
+    const that = this;
+
+    function inner() {
+      console.log(that);
+    }
+    */
+
+    inner(); // this = undefined
+  }
+
+  // doIt(); // this = undefined
+  // window.doIt(); // this = window
+
+  const o = {
+    id: 2,
+    // doIt: doIt,
+    doIt, // shorthand property
+  };
+
+  o.doIt(); // this = o
+
+  // console.log(window.doIt === o.doIt); // true or false?
+
+
+</script>

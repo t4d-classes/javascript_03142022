@@ -1,0 +1,40 @@
+<script>
+
+  var t;
+
+  console.log(typeof t);
+
+  t = "test";
+  console.log(typeof t);
+
+  t = 4;
+  console.log(typeof t);
+
+  // t = 4n;
+  t = BigInt(4);
+  console.log(typeof t);
+
+  t = true; // false
+  console.log(typeof t);
+
+  t = Symbol()
+  console.log(typeof t);
+
+  t = null;
+  console.log(typeof t);
+
+  // t = JSON.parse("{ \"id\": 1 }"); // json
+  t = { id: 1 }; // object literal syntax
+  console.log(typeof t);
+  console.log(t instanceof Array);
+
+  t = [1,2,3,4,5]; // array literal syntax
+  console.log(typeof t);
+  console.log(t instanceof Array);
+
+  t = function() { };
+  console.log(typeof t);
+  console.log(t instanceof Object);
+  console.dir(t); // object itself to the console
+
+</script>

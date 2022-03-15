@@ -1,0 +1,40 @@
+<script>
+
+  // two patterns for using arrays
+
+  // list - common ops include adding/removing to/from the list
+
+  const nums = [1,2,3,4,5];
+
+  const cars = [
+    { id: 1, make: 'Ford', model: 'Fusion Hybrid' },
+    { id: 2, make: 'Tesla', model: 'S' },
+  ];
+
+  // tuple - collection of data that is related and travels together
+
+  const car = [1, 'Ford', 'Fusion Hybrid'];
+
+
+  // array destructuring
+  const [ someState, setSomeState ] = useState({ id: 2 });  // returns a tuple
+
+  /*
+  const stateInfo = useState({ id: 2 });
+  const someState = stateInfo[0];
+  const setSomeState = stateInfo[1];
+  */
+
+
+
+  // ES2025
+
+  //const nums2 = new List(1,2,3,4,5); // [1,2,3,4,5]
+
+
+  //const car2 = new Tuple(1, 'Ford', 'Fusion Hybrid'); // [1, 'Ford', 'Fusion Hybrid']
+
+
+
+
+</script>

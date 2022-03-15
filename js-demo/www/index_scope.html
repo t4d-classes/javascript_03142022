@@ -1,0 +1,27 @@
+<script>
+
+  // var outside of a function - global scope
+  // let, const outside of a function - script scope
+
+  // function doIt() {
+    const t = 2;
+  //}
+
+  // doIt();
+
+
+  window.y = t;
+
+
+
+
+</script>
+<script>
+
+  console.log(t);
+  console.log(window.t);
+  console.log(window.y);
+  console.log(globalThis.y);
+
+
+</script>

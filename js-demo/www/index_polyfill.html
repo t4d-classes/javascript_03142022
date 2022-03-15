@@ -1,0 +1,27 @@
+<script>
+
+  'use strict';
+
+  if (!Array.prototype.mapper) {
+
+    // polyfill
+    Array.prototype.mapper = function(transformFn) {
+      var newArr = new Array();
+      for (var x=0; x<this.length; x++) {
+        newArr.push(transformFn(x));
+      }
+      return newArr;
+    }
+
+  }
+
+
+  var nums = new Array(1,2,3,4,5);
+
+  // alias map=mapper
+
+  var doubleNums = nums.mapper(x => x * 2)
+
+  window.alert(doubleNums);
+
+</script>

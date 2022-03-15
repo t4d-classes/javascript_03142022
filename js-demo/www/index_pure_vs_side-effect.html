@@ -1,0 +1,41 @@
+<script>
+
+  // pure function (does not cause side-effects)
+  // rules for pure functions
+  // - all data comes from parameters
+  // - parameters cannot be mutated
+  // - function cannot cause a side-effect
+  // - the only output of the function comes from the return statement
+  function doIt1(msg) {
+  
+    return msg;
+  
+  }
+
+  function add(x,y) { 
+    const sum = x + y;
+    return sum;
+  }
+
+  const msg2 = "hello";
+
+  // causes a side-effect
+  function doIt2(personName) {
+
+    personName = personName.toUpperCase();
+  
+
+    // examples of side effect
+    // - writing to the disk
+    // - writing to the network
+    // - writing to a database
+    // - writing to the console
+    console.log(msg2, personName);
+
+    // return undefined;
+  }
+
+
+
+
+</script>

@@ -1,0 +1,20 @@
+<script>
+
+  // var - function scope and hoisting (never use var in modern code)
+  // let, const - block scope and no hoisting
+
+  function doIt() {
+
+    const t = 2;
+    const s = 'e';
+
+    t = 5;
+
+    console.log(t, s);
+  
+  }
+
+  doIt();
+
+
+</script>
