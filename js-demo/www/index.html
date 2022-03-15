@@ -2,61 +2,60 @@
 
   'use strict';
 
-  const parent = {
-    name: 'parent',
-    _amt: 1000,
-    get amt() {
-      return this._amt;
-    },
-    set amt(val) {
-      this._amt = val;
-    }
-  };
-
-  const child = Object.create(parent);
-  child.name = 'child';
-
-  parent.amt = 2000;
-
-  console.log(child.amt);
-
+  /*
+  setTimeout(() => {
   
+    console.log("hello");
 
-  console.log(child);
+  }, 0);
 
+  console.log("made it here");
+  */
 
-  function Person(fn, ln) {
-    this.fn = fn;
-    this.ln = ln;
+  const delay = () => Math.floor(Math.random() * 1000) + 500;
+
+  // console.log(delay());
+
+  /*
+  setTimeout(() => {
+    console.log('a');
+
+    setTimeout(() => {
+      console.log('b');
+
+      setTimeout(() => {
+        console.log('c');
+      }, delay());
+
+    }, delay());
+
+  }, delay());
+  */
+
+  function allDone() {
+    console.log("all done");
   }
 
-  Person.prototype.fullName = function() {
-    return this.firstName + ' ' + this.lastName;
-  }
+  setTimeout(() => {
+    console.log('a');
+  }, delay());
 
-  var p = new Person('Bob', 'Smith');
+  setTimeout(() => {
+    console.log('b');
+  }, delay());
+
+  setTimeout(() => {
+    console.log('c');
+  }, delay());
+
+  // Lab Exercise:
+
+  // Run the allDone function after all three setTimeouts have been invoked
+  // Rules:
+  // - Do not hard code the delay values
+  // - All three setTimeout calls must be in the same task
 
 
-  class Person {
-
-    constructor(fn, ln) {
-        this.fn = fn;
-        this.ln = ln;
-    }
-
-    get firstName() {
-      return this.firstName;
-    }
-
-    set firstName(v) {
-      this.firstName = v;
-    }
-
-    fullName() {
-      return this.firstName + ' ' + this.lastName;
-    }    
-
-  }
 
 
 </script>

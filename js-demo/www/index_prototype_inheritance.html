@@ -1,0 +1,62 @@
+<script>
+
+  'use strict';
+
+  const parent = {
+    name: 'parent',
+    _amt: 1000,
+    get amt() {
+      return this._amt;
+    },
+    set amt(val) {
+      this._amt = val;
+    }
+  };
+
+  const child = Object.create(parent);
+  child.name = 'child';
+
+  parent.amt = 2000;
+
+  console.log(child.amt);
+
+  
+
+  console.log(child);
+
+
+  function Person(fn, ln) {
+    this.fn = fn;
+    this.ln = ln;
+  }
+
+  Person.prototype.fullName = function() {
+    return this.firstName + ' ' + this.lastName;
+  }
+
+  var p = new Person('Bob', 'Smith');
+
+
+  class Person {
+
+    constructor(fn, ln) {
+        this.fn = fn;
+        this.ln = ln;
+    }
+
+    get firstName() {
+      return this.firstName;
+    }
+
+    set firstName(v) {
+      this.firstName = v;
+    }
+
+    fullName() {
+      return this.firstName + ' ' + this.lastName;
+    }    
+
+  }
+
+
+</script>

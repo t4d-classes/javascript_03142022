@@ -1,0 +1,41 @@
+<script>
+
+  'use strict';
+
+  class Cool {
+  
+    constructor(name) {
+      this.name = name;
+      // this.doIt = this.doIt.bind(this);
+    }
+  
+    // function - call-site this
+    // doIt() {
+    doIt = () => {
+      console.log(this);
+    }
+  
+  }
+
+  const cool = new Cool('cool');
+
+  cool.doIt();
+  
+  
+  // function myBind(fn, context /* this */) {
+  
+    // return function(...params) {
+      //fn.call(context, ...params); // call takes the params as individual arguments
+      // fn.apply(context, params); // apply takes the params as an array of arguments
+    //}
+  
+  //}
+
+  // cool.doIt = myBind(cool.doIt, cool);
+
+
+  // cool.doIt = cool.doIt.bind(cool);
+
+  setTimeout(cool.doIt, 2000);
+
+</script>
