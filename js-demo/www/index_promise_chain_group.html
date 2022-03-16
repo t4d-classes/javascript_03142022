@@ -1,0 +1,38 @@
+<script>
+
+  'use strict';
+
+  const delay = () => Math.floor(Math.random() * 1000) + 500;
+
+  const taskA = () => new Promise(resolve => setTimeout(() => resolve('a'), delay()));
+  const taskB = () => new Promise((resolve, reject) => setTimeout(() => reject('b'), delay()));
+  const taskC = () => new Promise(resolve => setTimeout(() => resolve('c'), delay()));
+
+  /*
+  taskA()
+    .then((r) => {
+      console.log(r);
+      return taskB();
+    })
+    .then((r) => {
+      console.log(r);
+      return taskC();
+    })
+    .then((r) => {
+      console.log(r);
+    });
+  */
+
+  Promise
+    .all([taskA(), taskB(), taskC()])
+    .then(results => console.log(results))
+    .catch(err => console.log('err:', err));
+
+  Promise
+    .allSettled([taskA(), taskB(), taskC()])
+    .then(results => console.log(results));
+
+  Promise.race([taskA(), new Promise(resolve => setTimeout(() => resolve('timeout'), 750))])
+    .then(result => console.log('race: ', result));
+
+</script>

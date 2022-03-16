@@ -1,0 +1,74 @@
+<script>
+
+  'use strict';
+
+  /*
+  const nums = [1,2,3,4,5,6,7,8,9];
+
+  // ... array rest operator - declaring variables
+  const [ first, second,, x, ...everythingElse ] = nums;
+
+  console.log(first);
+  console.log(second);
+  console.log(x);
+  console.log(everythingElse);
+
+  // ... array spread operator - within expressions
+  const newNums = [ ...nums, 10 ];
+  console.log(newNums);
+  */
+
+  const person = {
+    firstName: 'Richard',
+    lastName: 'Bruzzese',
+    address: {
+      street: '1600 Pennsylvania Ave.',
+      city: 'Washington, DC',
+      zipCode: '20500',
+    },
+  };
+
+  const firstName = 'Miguel';
+
+  // ... object rest operator
+  const { age, address: { street, city, zipCode }, ...otherProps } = person;
+
+  console.log(age);
+  console.log(firstName);
+  console.log(otherProps);
+  console.log(street);
+  console.log(city);
+  console.log(zipCode);
+
+  const foo = {
+    id: 1,
+    name: 'test'
+  };
+
+  /*
+  const bar = {
+    id: foo.id,
+    name: foo.name,
+  };
+  */
+
+  //const bar = foo;
+
+  
+  const bar = {
+    ...foo, // object spread operator
+  };
+
+  console.log(foo);
+  console.log(bar);
+
+  /*
+  const doIt = () => {
+  
+    return { id: 1, name: 3};
+  }
+
+  const { id, name } = doIt();
+  */
+
+</script>

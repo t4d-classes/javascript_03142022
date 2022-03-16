@@ -1,0 +1,45 @@
+<script>
+
+  'use strict';
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.addEventListener('readystatechange', () => {
+  
+    if (xhr.status === 200 && xhr.readyState === 4) {
+      console.log(JSON.parse(xhr.responseText));
+    }
+  
+  });
+
+  xhr.open('GET', 'http://localhost:5050/cars');
+  xhr.send();
+
+  // Implement the `myFetch` function as shown below
+  // use the XHR example to execute the actual AJAX call
+
+  const myFetch = (url) => {
+
+    return new Promise((resolve) => {
+
+      const xhr = new XMLHttpRequest();
+
+      xhr.addEventListener('readystatechange', () => {
+      
+        if (xhr.status === 200 && xhr.readyState === 4) {
+          resolve(JSON.parse(xhr.responseText));
+        }
+      
+      });
+
+      xhr.open('GET', url);
+      xhr.send();
+
+    });
+  
+  };
+
+  myFetch('http://localhost:5050/cars').then(cars => console.log(cars));  
+
+
+</script>
